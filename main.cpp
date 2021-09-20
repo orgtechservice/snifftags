@@ -129,11 +129,11 @@ std::map<std::string, std::set<unsigned short int>> getVlanList(int viewing_time
 }
 
 void printVlans(const std::map<std::string, std::set<unsigned short int>> &vlan_list) {
-    if(vlan_list.empty() == 1) {
+    if(vlan_list.empty()) {
         std::cout << "no 802.1Q tagged traffic detected\n";
         return;
     }
-    
+
     std::cout << "\nFound VLANs:\n";
     for (auto interface = vlan_list.begin(); interface != vlan_list.end(); ++interface) {
         std::cout << interface->first << ": ";
@@ -169,29 +169,3 @@ int main(int argc, char *argv[]) {
 
     printVlans(getVlanList(viewing_time));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
